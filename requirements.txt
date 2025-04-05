@@ -1,6 +1,9 @@
-
+accelerate
+datasets
+kagglehub
 numpy
 scikit-learn
 torch
 torchvision
 transformers
+ultralytics
