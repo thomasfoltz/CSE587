@@ -14,10 +14,10 @@ from ultralytics import YOLO
 
 import kagglehub
 
-kagglehub.dataset_download("akhatova/pcb-defects")
+# kagglehub.dataset_download("akhatova/pcb-defects")
 model = YOLO("yolov8n.pt")
 
-dataset_dir = os.path.join('/data/tjf5667/datasets/', 'PCB_DATASET')
+dataset_dir = os.path.abspath('../datasets/PCB_DATASET')
 
 for root, dirs, files in os.walk(dataset_dir):
    for name in dirs:

@@ -4,8 +4,8 @@ from ultralytics import YOLO
 model = YOLO("training/weights/best.pt")
 
 results = model.predict(
-    # source="/data/tjf5667/datasets/PCB_DATASET/output/images/train/",
-    source="/data/tjf5667/datasets/PCB_DATASET/output/images/val/",
+    # source="../datasets/PCB_DATASET/output/images/train/",
+    source="../datasets/PCB_DATASET/output/images/val/",
 )
 
 class_descriptions = {
@@ -28,37 +28,25 @@ class_names = {
 
 output = []
 for result in results:
-    prompt = []
-    explanations = []
-    
-    if result.boxes.cls.numel() == 0:
-        output.append({
-            "prompt": "",
-            "explanation": "No defects detected."
-        })
-        continue
-
     for box in result.boxes:
-        defect_type = result.names[int(box.cls)]
-        coordinates = [round(coord, 2) for coord in box.xywh[0].tolist()]
-        confidence = round(float(box.conf)*100, 2)
-        prompt.append(f"{defect_type}, {coordinates}, {confidence}")
+        defect_class = int(box.cls)
+        x = round(box.xywh[0][0].item(), 2)  # Extract X
+        y = round(box.xywh[0][1].item(), 2)  # Extract Y
+        confidence = f"{round(float(box.conf) * 100, 2)}%"  # Add %
+        
+        # Use human-readable class names
+        defect_name = class_names.get(defect_class, "Unknown Defect")
+        description = class_descriptions.get(defect_class, "")
+        
+        # Create individual training examples per defect
+        prompt = f"Describe defect: {defect_name}, ({x}, {y}), {confidence}"
+        explanation = f"{defect_name} detected at ({x}, {y}) with {confidence} confidence, {description}."
+        
+        output.append({"prompt": prompt, "explanation": explanation})
 
-        custom_description = class_descriptions.get(int(box.cls), "Unknown defect type.")
-        custom_name = class_names.get(int(box.cls), "Unknown defect name.")
-        explanations.append(f"{custom_name} detected at ({coordinates[0]}, {coordinates[1]}) with {confidence}% confidence - {custom_description}.")
 
-    explanation = "\n".join(explanations)
-    prompt = '\n'.join(prompt)
-
-    data = {
-        "prompt": prompt,
-        "explanation": explanation
-    }
-    output.append(data)
-
-# output_file = "/data/tjf5667/CSE587/train.json"
-output_file = "/data/tjf5667/CSE587/val.json"
+# output_file = "./train.json"
+output_file = "./val.json"
 with open(output_file, "w") as f:
     json.dump(output, f, indent=4)
 

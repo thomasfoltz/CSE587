@@ -1,0 +1,16 @@
+{
+    "name": "CSE587",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/CSE587,type=bind,consistency=cached",
+        "source=/home/thomasfoltz/datasets/,target=/workspaces/datasets,type=bind,consistency=cached"
+    ],
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--shm-size=8g"
+    ],
+    "postCreateCommand": "huggingface-cli login --token $(cat .hf_token)"
+}

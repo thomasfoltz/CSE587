@@ -1,1 +1,4 @@
 training/*
+.hf_token
+results/*
+backup/*
