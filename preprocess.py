@@ -1,53 +1,36 @@
+import csv
 import json
-from ultralytics import YOLO
+import re
 
-model = YOLO("training/weights/best.pt")
-
-results = model.predict(
-    # source="../datasets/PCB_DATASET/output/images/train/",
-    source="../datasets/PCB_DATASET/output/images/val/",
-)
-
-class_descriptions = {
-    0: "indicating a required drilled hole is absent, leading to connectivity issues",
-    1: "indicating a jagged notche or perforation on the edge of the PCB",
-    2: "indicating a break in the conductive path",
-    3: "indicating an unintended connection between two conductive paths",
-    4: "indicating a thin, unintended copper trace extending from the circuit, potentially causing interference or shorts",
-    5: "indicating an unwanted copper remnant on the PCB surface, which could lead to electrical faults or shorts"
+class_labels = {
+    1: "world",
+    2: "sports",
+    3: "business",
+    4: "sci/tech"
 }
 
-class_names = {
-    0: "Missing Hole",
-    1: "Mouse Bite",
-    2: "Open Circuit",
-    3: "Short Circuit",
-    4: "Spur",
-    5: "Spurious Copper"
-}
+def clean_text(text):
+    text = text.lower().strip()
+    text = re.sub(r"[^a-zA-Z0-9\s]", " ", text)
+    return text
 
-output = []
-for result in results:
-    for box in result.boxes:
-        defect_class = int(box.cls)
-        x = round(box.xywh[0][0].item(), 2)  # Extract X
-        y = round(box.xywh[0][1].item(), 2)  # Extract Y
-        confidence = f"{round(float(box.conf) * 100, 2)}%"  # Add %
-        
-        # Use human-readable class names
-        defect_name = class_names.get(defect_class, "Unknown Defect")
-        description = class_descriptions.get(defect_class, "")
-        
-        # Create individual training examples per defect
-        prompt = f"Describe defect: {defect_name}, ({x}, {y}), {confidence}"
-        explanation = f"{defect_name} detected at ({x}, {y}) with {confidence} confidence, {description}."
-        
-        output.append({"prompt": prompt, "explanation": explanation})
+def preprocess_csv_to_json(input_csv, output_json):
+    data = []
+    with open(input_csv, "r", encoding="utf-8") as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            label = class_labels.get(int(row["Class Index"]), "unknown")
+            title = row["Title"].strip()
+            description = row["Description"].strip()
+            text = f"{title}. {description}"
+            
+            data.append({
+                "text": clean_text(text),
+                "label": label
+            })
+    
+    with open(output_json, "w", encoding="utf-8") as json_file:
+        json.dump(data, json_file, indent=4)
 
-
-# output_file = "./train.json"
-output_file = "./val.json"
-with open(output_file, "w") as f:
-    json.dump(output, f, indent=4)
-
-print(f"Results saved to {output_file}")
+preprocess_csv_to_json("train.csv", "train.json")
+preprocess_csv_to_json("test.csv", "val.json")
