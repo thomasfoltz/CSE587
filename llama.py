@@ -22,7 +22,6 @@ def tokenize_function(examples):
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-model_path = "./researcher-llama-3.2-3B"
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B", device_map="auto")
 
 bnb_config = BitsAndBytesConfig(
@@ -94,5 +93,6 @@ trainer = Trainer(
 trainer.train()
 eval_results = trainer.evaluate()
 
+model_path = "./researcher-llama-3.2-3B"
 model.save_pretrained(model_path)
 tokenizer.save_pretrained(model_path)

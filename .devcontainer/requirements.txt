@@ -1,11 +1,10 @@
 accelerate
 bitsandbytes
 datasets
-kagglehub
+nltk
 numpy
 peft
 scikit-learn
 torch
 torchvision
 transformers
-ultralytics
