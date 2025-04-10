@@ -1,6 +1,6 @@
 # Fine-tuning llama-3.2-3B for VAD Research
 
-This repository contains code for fine-tuning and evaluating a language model for its use as an approach generator for VAD Research.
+Fine-tuning llama-3.2-3B and evaluating use as a research approach generator.
 
 ## Getting Started
 
