@@ -1,11 +1,10 @@
+import os
 import pandas as pd
-import nltk
-from nltk.translate.bleu_score import corpus_bleu
-from nltk.tokenize import word_tokenize
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, pipeline
 
-nltk.download("punkt")
-nltk.download("punkt_tab")
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+from rouge_score import rouge_scorer
 
 df = pd.read_csv("./data/test.csv")
 questions = df["VAD Question"].tolist()
@@ -45,21 +44,50 @@ def generate_response(model, tokenizer, question, max_length=200, repetition_pen
     response = tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
     return response
 
-original_responses = []
-tuned_responses = []
-references = []
+generated_responses = "./data/generated_responses.csv"
 
-for question, approach in zip(questions, approaches):
-    print(f"Processing question: {question}")
-    original_response = generate_response(model, tokenizer, question)
-    tuned_response = generate_response(tuned_model, tuned_tokenizer, question)
+if os.path.exists(generated_responses):
+    df = pd.read_csv(generated_responses)
+    questions, original_responses, tuned_responses = df["Question"].tolist(), df["Original_Response"].tolist(), df["Tuned_Response"].tolist()
+
+else:
+    print("Generating responses...")
+    original_responses = [generate_response(model, tokenizer, q) for q in questions]
+    tuned_responses = [generate_response(tuned_model, tuned_tokenizer, q) for q in questions]
     
-    original_responses.append(word_tokenize(original_response))
-    tuned_responses.append(word_tokenize(tuned_response))
-    references.append([word_tokenize(approach)])
+    data = {
+        "Question": questions,
+        "Original_Response": original_responses,
+        "Tuned_Response": tuned_responses
+    }
+    df = pd.DataFrame(data)
+    df.to_csv(generated_responses, index=False)
 
-original_bleu = corpus_bleu(references, original_responses)
-tuned_bleu = corpus_bleu(references, tuned_responses)
+encoder = SentenceTransformer('all-mpnet-base-v2')
+def calculate_semantic_scores(questions, generated_responses, ground_truths):
+    question_embs = encoder.encode(questions)
+    response_embs = encoder.encode(generated_responses)
+    truth_embs = encoder.encode(ground_truths)
+    
+    qa_similarity = cosine_similarity(response_embs, truth_embs).diagonal()
+    context_similarity = cosine_similarity(response_embs, question_embs).diagonal()
+    
+    return {
+        'mean_semantic_similarity': qa_similarity.mean(),
+        'mean_context_relevance': context_similarity.mean()
+    }
 
-print(f"Original Model BLEU-4 Score: {original_bleu:.4f}")
-print(f"Tuned Model BLEU-4 Score: {tuned_bleu:.4f}")
+original_scores = calculate_semantic_scores(questions, original_responses, approaches)
+tuned_scores = calculate_semantic_scores(questions, tuned_responses, approaches)
+
+print(original_scores)
+print(tuned_scores)
+
+scorer = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)
+def calculate_rouge(generated, references):
+    scores = [scorer.score(ref, gen)['rougeL'].fmeasure 
+             for gen, ref in zip(generated, references)]
+    return sum(scores)/len(scores)
+
+print(f"Original ROUGE-L: {calculate_rouge(original_responses, approaches):.4f}")
+print(f"Tuned ROUGE-L: {calculate_rouge(tuned_responses, approaches):.4f}")

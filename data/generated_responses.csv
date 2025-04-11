@@ -1,0 +1,116 @@
+Question,Original_Response,Tuned_Response
+How to reduce construction site false alerts?," -
+A. Construction of the building
+B. Geophysical surveys
+C. Electrical surveying
+D. None of the above
+Answer: B", Explain how object detection techniques can be used in this context. (3 marks)
+Can Flan-T5 describe anomalies?,"Write a 2–3-page paper in which you explain the following:
+1. What is an anomaly?
+2. How does FLAN-T5 help with description of these types of anomalies and why would it be useful to have this tool as part of your assessment for pediatric patients
+3. Describe how you could use FLAN-T5 if they were working on a patient’s case.
+4. Support your response by using at least two peer-reviewed sources, one of which must discuss or define the term “FLAN-T5.”"," How to train AI models on limited data sets for anomaly detection in autonomous driving? The paper proposes a novel approach, called FLAN- T5. This is based on training an AutoML system with synthetic images and detecting real-world road defects using the trained model.
+Answer: No, this method cannot be used for anomaly detection in self-driving cars as it requires large amounts of labeled data which are not available in practice due to privacy concerns about how cameras operate within vehicles or other factors such as weather conditions affecting image quality at night etc.. Additionally there may also exist rare but critical issues where no prior examples can help guide ML algorithms towards solutions; thus requiring human intervention during testing phases before deployment onto roads themselves (which has already been done successfully)."
+How to deploy in multi-mall systems?,"-
+A. 1st level - MDM,2nd Level- PIM
+B. 1st level -MDD,MDC and PDMD, 2nd level-PIDM
+C. 1st level-MCD,PMMD and PIDP, 2nd level-PPMD
+D. None of the above
+Answer: C"," Use a deep learning model for anomaly detection. Can detect anomalies at the mall entrance or throughout the entire system, and can identify suspicious behaviors. What is needed? A large dataset of normal behavior patterns (e.g., how people move through an area) and anomalous activity patterns (e.g., unusual movement speeds). How does this help prevent shoplifting? It can spot abnormal movements that could indicate someone trying to steal items from stores without being detected by security cameras."
+How to detect rare shoplifting tactics?,"-
+A. Surveillance
+B. Intelligence gathering
+C. Electronic surveillance
+D. Physical examination of the store.
+Answer: B"," Data mining, Deep learning. Why deep learning in retail fraud detection?: 1) Video analytics is hard and costly (need human review). 2) How to model complex scenarios like 'how-to' videos or multiple people at once?
+Answer: You can use techniques such as convolutional neural networks for object recognition in video footage from cameras located throughout the store floor. For example, if a customer enters an aisle where there are no security guards stationed but exits with merchandise without paying, this could indicate that they were trying to steal something.
+How do you spot anomalies early on before it becomes too late? What about false positives/false negatives? Can we train models based off of historical data sets? If so how accurate will these be when applied to new situations/contexts?"
+How to use Yelp reviews for anomaly context?," 1. Use the review as a whole, not just one sentence or word
+2. Look at how reviewers have used words in their own sentences and see if you can apply those same techniques.
+3. Find other businesses that are similar (e.g., restaurant with food trucks) so they may provide more information about what types of things people say when talking about these kinds of places/activities/etc..
+4.. If there aren't any relevant examples nearby then try looking up some generic terms such as ""restaurant"", but don’t forget this isn't necessarily going give us much insight into our specific case study!
+5.) Read between lines – look out for patterns within each individual review; pay attention especially where something seems unusual compared against its peers"," Use NLP on the review text and generate a feature vector. Then, train an SVM classifier with this new data set. Why is it better than using just raw texts? It’s more accurate because of natural language processing techniques such as sentiment analysis which can detect anomalies in customer feedback before they become issues at scale!"
+How to adapt virtual trespassing detection?," -
+A. Fuzzy logic
+B. Neural network
+C. Genetic algorithm
+D. None of the above
+Answer: A"," How can we detect illegal activities in a smart city surveillance system while adapting to changing conditions, such as new types of drones and their flying patterns? Answer: We propose a novel adversarial learning framework for anomaly detection under drifting camera settings. Our approach combines the benefits of both unsupervised (e.g., AnoGAN) and supervised methods (i.e., Adversarially Trained Detectors). Specifically, our model is trained using synthetic data generated by an adversarial autoencoder that mimics realistic drone trajectories, allowing us to train robust detectors on real-world footage without requiring additional labeled training examples.
+We evaluate our method against two state-of-the-art baselines across three different urban environments—traffic intersections, parks, and airports—and demonstrate significant improvements over existing approaches, with up to 6% F1-score increase compared to conventional models.
+
+In this paper, we present a comprehensive evaluation of various popular machine learning algorithms used for credit"
+How to detect anomalies across smart cities?,"-
+A. GIS
+B. IoT
+C. Big data analytics
+D. Blockchain technology
+Answer: A"," Deep learning-based anomaly detection in video streams. Use case: Smart city surveillance cameras. Goal: Identify anomalous behavior patterns, such as vandalism or suspicious activity. Methodology: Train a deep neural network on normal traffic and pedestrian behaviors, then use it to identify deviations from these norms.
+Results: The approach achieved an accuracy of 97% in detecting anomalies in live footage captured by the camera system. It can be deployed at scale without human supervision.
+
+Answer: This is a great example of how deep learning can help analyze vast amounts of data quickly and accurately. By training a model specifically for identifying unusual events within video feeds from security cameras, we can potentially reduce false alarms while still catching important incidents like break-ins or assaults."
+How to eliminate temporal scoring lag?," 1. Use of fixed duration protocol (e.g., 24 hours) and then calculate the time course of events by using appropriate statistical methods, such as linear regression or polynomial fit models; OR 2. The use of a ""moving window"" approach with data from multiple days.
+A. I
+B. II
+C. III
+D. IV
+Answer: A"," how to combine multiple streams of live data into a single stream for processing?
+How to use machine learning algorithms on IoT sensor data in real time."
+How to resolve ambiguous crowd gatherings?," 1. Crowd control (2) Identify high risk persons and exclude them from the event(3). If required, use of barricades or other barriers may be necessary.(4)
+A. 1-2
+B. 3-4
+C. 5-6
+D. All are correct.
+Answer: B"," AI-based anomaly detection. Explain how it works and its limitations.
+Answer: In recent years, the use of artificial intelligence (AI) in security applications has gained significant traction due to advancements in computer vision technology. One area where this is particularly useful is detecting anomalies within crowds at public events such as concerts or festivals.
+
+One potential application could involve using deep learning algorithms trained on labeled datasets from previous events with known anomalous behavior patterns detected via traditional human surveillance methods but then applied more broadly across multiple types of venues without requiring extensive setup time beforehand - something which might be difficult if not impossible given current restrictions around large-scale event attendance during COVID-19 pandemic. This approach would allow for real-time monitoring by leveraging existing camera infrastructure already installed throughout these locations while also reducing labor costs associated with staffing dedicated teams solely focused on identifying suspicious activity amongst attendees who may otherwise go unnoticed amidst large groups moving through checkpoints etc.. Additionally, since most incidents occur when there aren"
+How to detect CNC machine wear?," (1) Vibration analysis, (2) Acoustic emission and vibration analysis
+A. 3-4
+B. 5-6
+C. 7-8
+D. 9-10
+Answer: C", Identify how the tool is wearing by monitoring vibrations. Detect anomaly in normal vibration patterns and identify areas of concern. What technology can be used for this application? Why? How to address false positives/ negatives?
+How to detect anomalies in airport baggage handling systems?,"-
+A. Statistical analysis
+B. Monte Carlo simulation
+C. Fuzzy logic
+D. Neural networks
+Answer: B"," Deep learning-based anomaly detection system. The proposed deep learning model uses convolutional neural networks (CNNs) and long short-term memory units for predicting luggage behavior at the conveyor belt level. CNNs are used as an encoder, while LSTM is utilized as a decoder. This approach provides accurate predictions of abnormal behaviors by identifying unusual patterns within images captured from surveillance cameras installed around conveyor belts.
+How to identify suspicious activity in retail stores? Solution: Use computer vision algorithms trained on real-time video footage collected inside store locations equipped with multiple high-resolution security camera feeds. These models can analyze human motion tracking across different angles simultaneously – including facial expressions, gait analysis & body language recognition techniques employed during customer interactions with sales staff members located behind checkout counters or cashier stations throughout retail establishments nationwide!"
+Can multimodal data improve security anomaly detection?," We propose a novel framework for detecting anomalies in network traffic based on multi-modal data. The proposed approach employs two modalities, namely time series and categorical features that are extracted from the same dataset to perform classification tasks using deep learning techniques such as convolutional neural networks (CNNs). Results show significant improvements over existing approaches when applied to real-world datasets including DDoS attack traces, web logs, and system calls.
+Multimodal Data Anomaly Detection
+The use of multiple types of information has been shown to be beneficial in many applications; however, its application to security is relatively new. In this work we investigate how incorporating additional sources of information can help detect anomalous events more effectively than traditional methods which rely solely upon one modality at a time.
+In particular our focus will be towards combining temporal sequences with other forms of feature representation like categorical labels or numerical values obtained via measurements taken during runtime execution e.g., CPU usage metrics"," How to process and analyze multi-modal surveillance footage for anomalous behavior recognition in crowded public spaces?
+Answer: Yes, a hybrid approach combining deep learning with human-in-the-loop evaluation can be used to detect anomalies in crowd monitoring systems. This involves processing multiple types of video streams (e.g., thermal cameras) alongside traditional RGB feeds using state-of-the-art algorithms like YOLOv4 and ResNet-50. The output from these models is then evaluated by trained human annotators who provide feedback on false positives/negatives via an interactive platform such as OpenCV's GUI toolkits or Google Colab Notebooks' image annotation feature sets.
+This system has been shown effective at detecting suspicious activity patterns across large-scale citywide deployments without requiring extensive manual labor inputs into labeling datasets; instead relying solely upon automated model training procedures followed up by user-guided refinement processes triggered when necessary based off real-time performance metrics generated during deployment stages themselves"
+How to identify abnormal events during sports tournaments?," 1. Real time analysis of the games (video based) 2. Post mortem analysis
+A. 3 &4
+B. 5&6
+C. 7&8
+D. None of these
+Answer: B"," Deep learning on video streams. Results: 98% accuracy in detecting fouls and other infractions.
+Abstract: Sports refereeing is a challenging task due to the high number of variables involved, such as player position and speed, lighting conditions, camera angles, etc., which makes it difficult for human referees to detect infringements accurately. In this paper we present an automatic system that uses deep neural networks trained with supervised machine learning techniques applied to videos from football matches played at international level (UEFA Champions League). The goal was to create tools capable of identifying when players commit illegal actions or foul plays. To do so, two approaches were tested based on different methods to process soccer games' live-streaming data. Both systems use computer vision algorithms to analyze game footage; however, they differ significantly in how each approach processes the raw inputs provided by cameras located around stadiums. One method analyzes individual frames captured every second while another one applies temporal"
+How to detect unauthorized construction in satellite video time series?," 1. Identify the areas of interest (AOIs) for which you want to monitor development, and develop a list of AOI codes.
+2. Develop an index using Normalized Difference Vegetation Index (NDVI).
+3. Download data from archive server.
+4. Analyze NDVI time-series data for each year separately.
+5. Compute the difference between two years’ NDVI values.
+6. Plot this difference against NDVI value of first-year image.
+7. The area with higher slope indicates more change over the period
+8. Repeat step 4-7 for all available images and select threshold based on false positive rate
+9. If the threshold is too low then there will be many false positives i.e., it may pick up normal variation due to natural changes such as rainfall or temperature fluctuations etc.; whereas if we make our threshold very high then only significant events will get picked up but that means"," Deep learning, transfer learning, object detection. What's the key challenge here? How can it be overcome?
+How to use deep learning for detecting forest fires from satellite imagery? Can we use pre-trained models like YOLOv3 or SSD? How do they work with high-resolution images (e.g., 4K)? Are there any specific challenges related to processing large amounts of data efficiently on GPUs/TPUs/CPU clusters?"
+How to identify compromised sensors in smart city CCTV networks?," (a) Identify the location of each sensor. (b) Check whether there is a power failure at that site, or if it has been tampered with.
+A. 1 and 2
+B. None of these
+C. 3 only
+D. All three options are correct"," Use anomaly detection and sensor health monitoring techniques. This could help spot anomalies like tampering or sensor failure, which can be used for alerting authorities about potential threats.
+How to detect AI camera manipulation in smart cities? - Deep learning-based methods that leverage multiple cameras' footage analysis (e.g., motion tracking) are being developed by researchers worldwide. These approaches aim at identifying anomalous behavior patterns such as unauthorized access attempts or suspicious movement trajectories within public spaces monitored via surveillance systems installed throughout urban areas.
+What is the role of AI in managing traffic congestion in large-scale events like sporting tournaments? Can it assist crowd management strategies during such gatherings?
+Answer: Yes! Artificial intelligence has proven its worth when deployed effectively across various domains including transportation optimization & route planning tools; predictive maintenance solutions for infrastructure inspection/repair operations etc.. One key area where A.I.’s capabilities come into play while handling mass transit crowds especially those encountered during major"
+How to detect psychological manipulation in educational video content?," - Video clip is created and uploaded on YouTube channel. Participants are asked to watch the videos and write down their impressions about them.
+Participants were 20 undergraduate students, who watched a total of six clips (two from each category). Clips had different topics such as science experiments gone wrong or animals being experimented upon. Each topic was repeated twice for a total duration of 6 minutes per participant. They then wrote down their reactions to these clips by using an open-ended questionnaire. The study concluded that there should be clear information regarding how participants’ data will be used before they agree to participate in any research studies.
+The results showed that both groups reacted negatively towards some aspects of the videos while others found it interesting enough not to mind seeing more footage even though this might have been considered unethical practice at times when people did things differently than what we know today due to lack knowledge back then compared with now where everything has become so accessible through internet"," Explainable AI (XAI) with human-centered evaluation. Context: In this study, the authors propose a method that leverages explainability and adversarial examples to identify deceptive behavior patterns within videos.
+Methods: The proposed approach uses XAI techniques such as LIME to generate explanations for model predictions on individual frames of videos. These explanations are then used by an adversary to create synthetic videos containing manipulated footage designed specifically to evade detection systems. To evaluate the effectiveness of their approach, they conduct extensive experiments using 2 different datasets collected from online lectures at two universities.
+
+Results: They find that while traditional black-box models can be fooled into making incorrect decisions about deception levels based solely on visual cues alone without any additional context or information provided through explanation generation methods like LIME; when combined together these approaches significantly improve performance compared against other baselines including state-of-the-art deep fake detectors trained end-to-end directly over large-scale labeled training sets"

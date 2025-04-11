@@ -4,7 +4,9 @@ datasets
 nltk
 numpy
 peft
+rouge-score
 scikit-learn
+sentence-transformers
 torch
 torchvision
 transformers
