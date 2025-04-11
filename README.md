@@ -1,6 +1,6 @@
 # Fine-tuning llama-3.2-3B for VAD Research
 
-Fine-tuning llama-3.2-3B and evaluating use as a research approach generator.
+Fine-tuning llama-3.2-3B and evaluating use as a research approach generator. To read final project report, click [here](./thomasfoltz_report.pdf).
 
 ## Getting Started
 
